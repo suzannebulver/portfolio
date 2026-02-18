@@ -1,0 +1,247 @@
+/* ── Design tokens ── */
+:root {
+  --color-bg:       white;
+  --color-surface:  #ffffff;
+  --color-text:     #2c3440;
+  --color-muted:    #6b6b6b;
+  --color-accent:   #113b60;
+  --color-border:   #e0dbd4;
+  --font-heading:   'Georgia', serif;
+  --font-body:      'Segoe UI', Tahoma, sans-serif;
+  --max-width:      1200px;
+  --radius:         6px;
+}
+
+/* ── Reset ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+/* ── Layout ── */
+header, main, footer {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+/* ── Header ── */
+header {
+  padding-top: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 2px solid var(--color-border);
+  margin-bottom: 3rem;
+}
+
+header h1 {
+  font-family: var(--font-heading);
+  font-size: 2.2rem;
+  font-weight: normal;
+  color: var(--color-text);
+  margin-bottom: 1.25rem;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--color-text);
+  font-size: 0.95rem;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s;
+}
+
+nav a:hover {
+  border-bottom-color: var(--color-accent);
+}
+/* ── Sections ── */
+section {
+  margin-bottom: 4rem;
+}
+
+section h2 {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-text);
+  border-bottom: none;
+  padding-bottom: 0;
+  margin-bottom: 2.5rem;
+}
+
+/* ── Timeline (Work Experience & Education) ── */
+.job, .degree {
+  position: relative;
+  padding-left: 3.5rem;
+  margin-bottom: 2.5rem;
+}
+
+/* The vertical line connecting entries */
+.job::before, .degree::before {
+  content: '';
+  position: absolute;
+  left: 1.1rem;
+  top: 2.5rem;
+  bottom: -2.5rem;
+  width: 1px;
+  background-color: var(--color-border);
+}
+
+/* Hide the line on the last entry in each section */
+.job:last-child::before, .degree:last-child::before {
+  display: none;
+}
+
+/* The circle icon */
+.job::after, .degree::after {
+  content: '';
+  position: absolute;
+  left: 0.55rem;
+  top: 0.35rem;
+  width: 1.2rem;
+  height: 1.2rem;
+  border-radius: 50%;
+  border: 2px solid var(--color-accent);
+  background-color: var(--color-surface);
+}
+
+.job h3, .degree h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.15rem;
+}
+
+.dates {
+  font-size: 0.875rem;
+  color: var(--color-muted);
+  margin-bottom: 0.6rem;
+}
+.job p, .degree p {
+  font-size: 0.95rem;
+  color: var(--color-muted);
+}
+
+/* ── Work Samples & Projects ── */
+.sample-category {
+  margin-bottom: 2.5rem;
+}
+
+.sample-category h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 1.25rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-muted);
+}
+
+.writing-sample, .project {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-left: 3px solid var(--color-accent);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.writing-sample h4, .project h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.writing-sample p, .project p {
+  color: var(--color-muted);
+  font-size: 0.95rem;
+  margin-bottom: 0.75rem;
+}
+
+.writing-sample a, .project a {
+  color: var(--color-accent);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.writing-sample a:hover, .project a:hover {
+  text-decoration: underline;
+}
+
+/* ── Skills Grid ── */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem 3rem;
+}
+
+.skill-item {
+  position: relative;
+  padding-left: 1.25rem;
+}
+
+/* The colored bullet dot */
+.skill-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.45rem;
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 50%;
+  background-color: var(--color-accent);
+}
+
+.skill-item h3 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+  color: var(--color-text);
+}
+
+.skill-item p {
+  font-size: 0.875rem;
+  color: var(--color-muted);
+  line-height: 1.5;
+}
+
+/* ── Footer ── */
+footer {
+  border-top: 2px solid var(--color-border);
+  padding-top: 2.5rem;
+  padding-bottom: 3rem;
+  margin-top: 2rem;
+}
+
+footer h2 {
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  font-weight: normal;
+  color: var(--color-text);
+  margin-bottom: 1.25rem;
+}
+
+.contact-info p {
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.contact-info a {
+  color: var(--color-text);
+}
+
+.contact-info a:hover {
+  text-decoration: underline;
+}
+/* ── About Me ── */
+

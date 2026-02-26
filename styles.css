@@ -245,4 +245,16 @@ footer h2 {
   text-decoration: underline;
 }
 /* ── About Me ── */
+.about-me-content {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.about-me-photo {
+  width: 200px;
+  height: auto;
+  border-radius: var(--radius);
+  flex-shrink: 0;
+}
 
